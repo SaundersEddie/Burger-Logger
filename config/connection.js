@@ -2,15 +2,19 @@
 // Eddie Saunders saunders.eddie@outlook.com 13th May 2020
 
 // Set up MySQL connection.
-var mysql = require("mysql");
+const mysql = require("mysql");
 
-var connection = mysql.createConnection({
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "WestHam666!!",
-    database: "burgers_db"
-});
+if (process.nextTick.JAWSDB_URL) {
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+    connection = mysql.createConnection({
+        host: "localhost",
+        port: 3306,
+        user: "root",
+        password: "WestHam666!!",
+        database: "burgers_db"
+    })
+}
 
 // Make connection.
 connection.connect((err) => {
