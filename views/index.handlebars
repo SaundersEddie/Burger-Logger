@@ -1,40 +1,46 @@
-<h1>Burgers</h1>
+<h1>All Your Burgers Are Belong To Us!</h1>
+<img src="./assets/images/burger.jpg">
 
-<h2>All Your Burgers Are Belong To Us!</h2>
 
-<img src = "./assets/images/burger.jpg" alt="Burger Image">
+<div class="container">
 
-<ul>
-  {{#each burgers}}
-    {{#unless consumed}}
-      {{> cats/cat-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
 
-<h2>Burgers that are not consumed!</h2>
+  {{!-- This should be showing the burger list if not devoured--}}
+  <div class="row justify content-center">
+    <div class="col-md-6">
+      <h2>Which burger would you like to devour?</h2>
+      <ul>
+        {{#each burger}}
+        {{#unless devoured}}
+        <p>{{burger_name}}</p>
+        {{!-- <input type="hidden" value={{id}}> --}}
+        <button type="submit" class="devour" data-id="{{id}}">Devour</button>
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
 
-<ul>
-  {{#each burgers}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
+    {{!-- This will show the burger list if devoured --}}
+    <div class="col-md-6">
+      <ul>
+        {{#each burger}}
+        {{#if devoured}}
+        <p>{{burger_name}}</p>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
   </div>
+</div>
 
-  <div class="form-group">
-    <label for="sleepy">Consumed?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
-  </div>
-
-  <button type="submit">Add Burger</button>
-</form>
+{{!-- This is out add burger stuff --}}
+<div class="container">
+  <form class="create-form">
+    <div class="form-group">
+      <label for="ca">What is your burger name?</label>
+      <input type=text id="ca" name="name">
+    </div>
+    <button type='submit'>Add Burger</button>
+  </form>
+</div>
+</div>

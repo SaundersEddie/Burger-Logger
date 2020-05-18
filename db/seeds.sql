@@ -3,10 +3,10 @@
 
 USE burgers_db;
 
-INSERT INTO burgers (burger_name)
-VALUES ("Test Buerg 1"),
-("Test Burger 2"),
-("Test Burger 3"),
-("Test Burger 4"),
-("Test Burger 5")
+INSERT INTO burgers (burger_name, devoured)
+VALUES ("Test Burger 1", false),
+("Test Burger 2", false),
+("Test Burger 3", false),
+("Test Burger 4", false),
+("Test Burger 5", false)
 
