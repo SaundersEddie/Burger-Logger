@@ -1,27 +1,34 @@
-<h1>All Your Burgers Are Belong To Us!</h1>
-<img src="./assets/images/burger.jpg">
-
+<div class="container">
+  <div class="row justify-content-center">
+    <h1>All Your Burgers Are Belong To Us!</h1>
+  </div>
+</div>
 
 <div class="container">
+  <div class="row justify-content-center">
+    <img src="./assets/images/burger.jpg" alt="Huge Burger Baby!">
+  </div>
+</div>
 
-
+<div class="container">
   {{!-- This should be showing the burger list if not devoured--}}
-  <div class="row justify content-center">
+  <div class="row justify-content-center">
     <div class="col-md-6">
-      <h2>Which burger would you like to devour?</h2>
+      <h2>Devour Burger?</h2>
       <ul>
         {{#each burger}}
         {{#unless devoured}}
-        <p>{{burger_name}}</p>
-        {{!-- <input type="hidden" value={{id}}> --}}
-        <button type="submit" class="devour" data-id="{{id}}">Devour</button>
+        <h4>{{burger_name}}
+        <button type="submit" class="devour" data-id="{{id}}">Devour</button></h4>
         {{/unless}}
         {{/each}}
       </ul>
     </div>
 
     {{!-- This will show the burger list if devoured --}}
+    {{!-- <div class="justify-content-center"> --}}
     <div class="col-md-6">
+      <h2>Devoured Burgers</h2>
       <ul>
         {{#each burger}}
         {{#if devoured}}
@@ -29,18 +36,22 @@
         {{/if}}
         {{/each}}
       </ul>
+      </div>
     </div>
   </div>
-</div>
 
-{{!-- This is out add burger stuff --}}
-<div class="container">
-  <form class="create-form">
-    <div class="form-group">
-      <label for="ca">What is your burger name?</label>
-      <input type=text id="ca" name="name">
+  {{!-- This is out add burger stuff --}}
+  <div class="container">
+    <div class="row col-md-12 justify-content-center">
+      <h2>Add a new burger to devour!</h2>
     </div>
-    <button type='submit'>Add Burger</button>
-  </form>
-</div>
-</div>
+    <div class="row justify-content-center">
+      <form class="create-form">
+        <div class="form-group">
+          <label for="ca">What is your burger name?</label>
+          <input type=text id="ca" name="name">
+        </div>
+        <button type='submit'>Add Burger</button>
+      </form>
+    </div>
+  </div>
