@@ -31,7 +31,7 @@ node_modules folder has been added to .gitignore
 # Use
 Application can be executed from the following URL:
 
-https://eddie-note-app.herokuapp.com/
+https://burgerconsumption.herokuapp.com/
 
 # Download
 The source for this app can be downloaded here:
